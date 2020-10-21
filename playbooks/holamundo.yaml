@@ -3,12 +3,19 @@
   tasks:
     - name: Hola mundo!!!
       debug: 
-        msg: Hola mundo 
+        msg: Hola mundo
+      tags:
+        - saludo
+        - bienvenida
+      when: 
+        - ansible_facts.distribution== 'CentOS'
+      notify: handler1
         
     - name: Crear usuario
       user: 
         name: ivan
         state: present
+      notify: usuariocreado
         
     - name: Caracteristicas de la máquina
       debug: 
@@ -17,5 +24,20 @@
     - name: Adios mundo!!!
       debug: 
         msg: Adios mundo
+      tags:
+        - saludo
+        - despedida
+        
+   handlers:
+    - name: handler1
+      debug: 
+        msg: Soy el handler1
+      listen: usuariocreado
+      
+     - name: handler2
+      debug: 
+        msg: Soy el handler2
+      listen: usuariocreado
+      
 
         
