@@ -1,14 +1,17 @@
+-------
+# Default
+
 - hosts: all
   gather_facts: yes
   tasks:
     - name: Hola mundo!!!
       debug: 
-        msg: Hola mundo
+        msg: Hola mundo 
       tags:
         - saludo
         - bienvenida
       when: 
-        - ansible_facts.distribution== 'CentOS'
+        - ansible_facts.distribution == 'CentOS'
       notify: handler1
         
     - name: Crear usuario
@@ -23,21 +26,20 @@
     
     - name: Adios mundo!!!
       debug: 
-        msg: Adios mundo
+        msg: Adios mundo 
       tags:
         - saludo
         - despedida
-        
-   handlers:
+
+  handlers:
     - name: handler1
       debug: 
-        msg: Soy el handler1
+        msg: Soy el handler 1 
       listen: usuariocreado
-      
-     - name: handler2
+    - name: handler2
       debug: 
-        msg: Soy el handler2
+        msg: Soy el handler 2
       listen: usuariocreado
-      
+
 
         
