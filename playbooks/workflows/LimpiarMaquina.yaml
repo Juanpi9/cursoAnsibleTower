@@ -2,4 +2,4 @@
   
   tasks:
     - debug:
-        msg: Soy la tarea de Limpiar Maquina
+        msg: Soy la tarea de Limpiado
