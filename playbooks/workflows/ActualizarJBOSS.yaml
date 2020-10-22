@@ -1,5 +1,5 @@
 - hosts: all
-
+  
   tasks:
     - debug:
-        msg: Soy la tarea de actualización de JBOSS
+        msg: Soy la tarea de Actualización de JBOSS

@@ -1,5 +1,5 @@
 - hosts: all
-
+  
   tasks:
     - debug:
-        msg: Soy la tarea de reinicio de aplicación 
+       msg: Soy la tarea de Instalación de Librerias en Redhat
